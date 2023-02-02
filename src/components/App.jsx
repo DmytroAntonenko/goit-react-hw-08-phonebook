@@ -69,9 +69,9 @@ const App = () => {
             path="/login"
             element={<RestrictedRoute redirectTo="/contacts" component={<LoginPage />}/>}
           />
-          <Route path='/contacts'
+          {/* <Route path='/contacts'
               element={<PrivateRoute redirectTo='/login' component={<ContactsPage />} />}
-          />
+          /> */}
           <Route path="*" element={<Suspense fallback={<h2>Loading ...</h2>}><NotFound /></Suspense>} />
         </Route>
       </Routes>

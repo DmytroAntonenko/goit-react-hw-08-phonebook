@@ -28,10 +28,10 @@ const ContactForm = () => {
   const dispatch = useDispatch();
   const contacts = useSelector(selectContacts);
   const handleSubmit = (values, { resetForm }) => {
-    // if (contacts.filter(contact => contact.name === values.name).length > 0) {
-    //   alert(`${values.name}  is already in contacts`);
-    //   return;
-    // }
+    if (contacts.filter(contact => contact.name === values.name).length > 0) {
+      alert(`${values.name}  is already in contacts`);
+      return;
+    }
       dispatch(addContact(values));
       resetForm();
   };
