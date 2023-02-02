@@ -6,18 +6,12 @@ import { ChakraProvider, Box, Center, Heading } from '@chakra-ui/react';
 import Filter from 'components/Filter/Filter';
 import ContactForm from 'components/ContactForm/ContactForm';
 import ContactList from 'components/ContactList/ContactList';
-// import {
-//   selectContacts,
-//   selectError,
-//   selectIsLoading,
-// } from 'redux/contacts/selectors';
+
 import { fetchContacts } from 'redux/contacts/operations';
 
 export default function Contacts() {
-  // const contacts = useSelector(selectContacts);
   const dispatch = useDispatch();
-  // const isLoading = useSelector(selectIsLoading);
-  // const error = useSelector(selectError);
+  
 
   useEffect(() => {
     dispatch(fetchContacts());

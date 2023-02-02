@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { lazy, useEffect, Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import RestrictedRoute from './RestrictedRoute/RestrictedRoute';
-// import { PrivateRoute } from './PrivateRoute/PrivateRoute';
+import { PrivateRoute } from './PrivateRoute/PrivateRoute';
 import { Box, Center, ChakraProvider, Spinner, Text } from '@chakra-ui/react';
 
 import useAuth from 'hooks/useAuth';
@@ -27,9 +27,9 @@ const LoginPage = lazy(() =>
   import('pages/Login/Login'),
 );
 
-// const ContactsPage = lazy(() =>
-//   import('pages/Contacts/Contacts'),
-// );
+const ContactsPage = lazy(() =>
+  import('pages/Contacts/Contacts'),
+);
 
 const NotFound = lazy(() =>
   import('pages/NotFound/NotFound'),
@@ -69,9 +69,9 @@ const App = () => {
             path="/login"
             element={<RestrictedRoute redirectTo="/contacts" component={<LoginPage />}/>}
           />
-          {/* <Route path='/contacts'
+          <Route path='/contacts'
               element={<PrivateRoute redirectTo='/login' component={<ContactsPage />} />}
-          /> */}
+          />
           <Route path="*" element={<Suspense fallback={<h2>Loading ...</h2>}><NotFound /></Suspense>} />
         </Route>
       </Routes>
