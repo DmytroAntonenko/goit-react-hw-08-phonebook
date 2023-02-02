@@ -4,29 +4,41 @@ import { useDispatch } from 'react-redux';
 import { deleteContact } from 'redux/contacts/operations';
 
 import {
-  GridItem,
+  ChakraProvider,
+  Box,
+  Flex,
+  Text,
   Button
 } from '@chakra-ui/react';
-
-import css from './ContactItem.module.css';
 
 const ContactItem = ({ name, number, id }) => {
   const dispatch = useDispatch();
   const onDelete = () => dispatch(deleteContact(id));
   return (
     <>
-      <span className={css.contact}>
-        {name}: {number}
-      </span>
-      <GridItem colSpan={1} justifySelf='center' area={'button'}>
-        <Button w={{ base: '40px', md: '55px' }}
-          h={{ base: '14px', md: '18px' }} mb='2px' size='xs'
-          variant='outline'
-          type='submit' name='Delete'
+      <ChakraProvider>
+			<Box w='600px'>
+				<Flex>
+        <Flex>
+					<Box w='300px' mb='15px'>
+						<Text fontSize='16px' paddingTop='10px'>{name}: </Text>
+					</Box>
+					<Box w='150px'>
+						<Text fontSize='16px' paddingTop='10px'>{number}</Text>
+					</Box>
+        </Flex>
+        <Button p={1} w={120}
+          display="block"
+          marginLeft='auto'
+          marginRight='auto'
+          fontWeight='bold'
+          type='submit' name='Delete contact'
           onClick={onDelete}>
           Delete
         </Button>
-      </GridItem>
+      </Flex>
+			</Box>
+    </ChakraProvider>
     </>
   );
 };

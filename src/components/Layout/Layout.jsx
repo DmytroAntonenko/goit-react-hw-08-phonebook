@@ -4,7 +4,7 @@ import { ChakraProvider } from '@chakra-ui/react';
 
 import css from './Layout.module.css';
 
-import { AppBar } from '../AppBar/AppBar';
+import AppBar from '../AppBar';
 
 const Layout = () => {
   return (

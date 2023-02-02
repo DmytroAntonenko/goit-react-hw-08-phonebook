@@ -1,4 +1,4 @@
-import LoginForm from 'components/LoginForm/LoginForm';
+import LoginForm from 'components/LoginForm';
 import { useSelector } from 'react-redux';
 import { Flex, Heading, Box, Text } from '@chakra-ui/react';
 

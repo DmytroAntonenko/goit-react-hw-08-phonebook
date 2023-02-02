@@ -1,4 +1,4 @@
-import RegisterForm from 'components/RegisterForm/RegistrForm';
+import RegisterForm from 'components/RegisterForm';
 import { useSelector } from 'react-redux';
 import { Flex, Heading, Box, Text } from '@chakra-ui/react';
 

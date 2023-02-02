@@ -23,8 +23,8 @@ const UserMenu = () => {
             Welcome to your phonebook, {user.name}!
         </Text>
         <Button
-            fontSize='sm' fontWeight='bold'
-            w='80px' h={30} variant='outline'
+            fontWeight='bold' marginTop='4px' marginBottom='4px'
+            w='100px' h={30} variant='outline' backgroundColor='#EDF2F7'
             onClick={() => dispatch(logOut())}>
             Log out
         </Button>

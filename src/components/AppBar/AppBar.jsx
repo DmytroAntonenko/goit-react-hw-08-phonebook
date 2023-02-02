@@ -1,23 +1,22 @@
-import Navigation from 'components/Navigation/Navigation';
-import AuthNav from 'components/AuthNav/AuthNav';
-import UserMenu from 'components/UserMenu/UserMenu';
+import Navigation from '../Navigation';
+import AuthNav from '../AuthNav';
+import UserMenu from '../UserMenu';
 import useAuth from 'hooks/useAuth';
 import { Flex, Spacer, ChakraProvider } from '@chakra-ui/react';
 
-import css from './AppBar.module.css';
 
-export const AppBar = () => {
+const AppBar = () => {
   const { isLoggedIn } = useAuth();
 
   return (
     <ChakraProvider>
-      <div className={css.app__container}>
-        <Flex>
+        <Flex borderBottom='solid 2px #000' display='flex'>
           <Navigation />
           <Spacer />
           {isLoggedIn ? <UserMenu /> : <AuthNav />}
         </Flex>
-      </div >
     </ChakraProvider>
   );
 };
+
+export default AppBar;

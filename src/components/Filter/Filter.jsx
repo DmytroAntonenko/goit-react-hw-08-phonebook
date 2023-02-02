@@ -8,10 +8,10 @@ import { Input, Center } from '@chakra-ui/react';
 const Filter = () => {
   const dispatch = useDispatch();
 
-  const onInputChange = e => {
-    e.preventDefault();
-    const form = e.target;
-    dispatch(changeFilter(form.value.toLowerCase()));
+  const onInputChange = event => {
+    event.preventDefault();
+    console.log(event.target.value);
+    dispatch(changeFilter(event.target.value.toLowerCase()));;
 };
 
 return <Center mb="15px">
