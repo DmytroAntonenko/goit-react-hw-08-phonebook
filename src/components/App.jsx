@@ -44,7 +44,7 @@ const App = () => {
   }, [dispatch]);
      
   return isRefreshing ? (
-    <ChakraProvider>
+    <ChakraProvider >
       <Center>
         <Box mt='50%' mb='20px'>
           <Text>...Loading user data</Text>

@@ -17,7 +17,7 @@ const UserMenu = () => {
     >
         <Text fontSize={{ base: '22px'}}
             mb={{ base: '10px', md: 0 }} mr={{ md: '15px' }}
-            marginLeft='300px'
+            marginLeft='280px'
             textAlign='center' noOfLines={2}
             w={{ base: '100px', md: '400px' }}>
             Welcome to your phonebook, {user.name}!
